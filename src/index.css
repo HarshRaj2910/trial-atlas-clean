@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f5f1ea] text-slate-900 font-sans antialiased selection:bg-emerald-500/20 selection:text-slate-950;
+  }
+}
+
+.markdown-body {
+  @apply text-slate-700 leading-relaxed max-w-none;
+}
+
+.markdown-body h1 { @apply text-3xl font-bold mb-6 text-slate-950 tracking-tight; }
+.markdown-body h2 { @apply text-xl font-semibold mb-4 mt-8 text-slate-950 tracking-tight; }
+.markdown-body p { @apply mb-4; }
+.markdown-body pre { @apply bg-white border border-slate-200 p-4 rounded-xl overflow-x-auto mb-6; }
+.markdown-body code { @apply font-mono text-sm text-emerald-700; }
+.markdown-body ul { @apply list-disc ml-6 mb-4 space-y-2; }
+

@@ -1,0 +1,6 @@
+{
+  "network": "preprod",
+  "contractAddress": "95eaf001046638c2d4e75bf3c41c36a420c1a7f171e4cf7ccde3bd992a6c3307",
+  "explorer": "https://explorer.preprod.midnight.network",
+  "verification": "Use the explorer contract search with this address. The frontend and compiled artifacts target the same address."
+}

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="midnightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E1A" />
+      <stop offset="50%" stop-color="#05070C" />
+      <stop offset="100%" stop-color="#020305" />
+    </linearGradient>
+
+    <!-- Glowing Tech Gradients -->
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+
+    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B5179E" />
+      <stop offset="100%" stop-color="#7209B7" />
+    </linearGradient>
+
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7209B7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- High-End Glow Filter -->
+    <filter id="epicGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur1" />
+      <feGaussianBlur stdDeviation="24" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Floor Grid Pattern -->
+    <pattern id="cyberGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.03" />
+    </pattern>
+  </defs>
+
+  <!-- App Icon Base Background -->
+  <rect width="512" height="512" rx="128" fill="url(#midnightBg)" stroke="#1E293B" stroke-width="2"/>
+  <rect width="512" height="512" rx="128" fill="url(#cyberGrid)" />
+
+  <!-- Ambient Backdrop Glow -->
+  <circle cx="256" cy="256" r="140" fill="url(#neonPurple)" opacity="0.25" filter="url(#epicGlow)" />
+
+  <!-- Crescent moon (left side framework) -->
+  <path d="M 230,96 A 160,160 0 0,0 230,416 A 135,135 0 0,1 230,96 Z" fill="url(#moonGrad)" stroke="url(#neonPurple)" stroke-width="1.5" />
+  
+  <!-- Outer Decorative Target Ring (The Matcher System) -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#neonCyan)" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 15" />
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#neonPurple)" stroke-width="2" stroke-opacity="0.1" stroke-dasharray="40 180" />
+
+  <!-- Clinical Trial Cross (Tech-Dissected & Futuristic) -->
+  <g filter="url(#epicGlow)">
+    <!-- Top Arm -->
+    <rect x="232" y="126" width="48" height="76" rx="10" fill="url(#neonCyan)" />
+    <!-- Bottom Arm -->
+    <rect x="232" y="310" width="48" height="76" rx="10" fill="url(#neonCyan)" />
+    <!-- Left Arm -->
+    <rect x="126" y="232" width="76" height="48" rx="10" fill="url(#neonCyan)" />
+    <!-- Right Arm -->
+    <rect x="310" y="232" width="76" height="48" rx="10" fill="url(#neonCyan)" />
+  </g>
+
+  <!-- Central Match Core (Data Hub & Target) -->
+  <g filter="url(#epicGlow)">
+    <!-- Outer Core Ring -->
+    <circle cx="256" cy="256" r="42" fill="#05070C" stroke="url(#neonCyan)" stroke-width="3" />
+    <!-- Inner Crosshair / AI Matcher Matrix -->
+    <circle cx="256" cy="256" r="24" fill="none" stroke="url(#neonPurple)" stroke-width="2" />
+    <circle cx="256" cy="256" r="6" fill="#00F2FE" />
+  </g>
+
+  <!-- Data Nodes & Connection Lines (The Matcher Logic) -->
+  <g stroke="url(#neonCyan)" stroke-width="1.5" fill="none" opacity="0.8">
+    <!-- Top Right Connection -->
+    <path d="M 280,164 L 340,164 L 364,188" />
+    <circle cx="364" cy="188" r="4" fill="#00F2FE" stroke="none" />
+    
+    <!-- Bottom Right Connection -->
+    <path d="M 346,256 L 400,256 L 416,272" />
+    <circle cx="416" cy="272" r="5" fill="#00F2FE" filter="url(#epicGlow)" />
+    <circle cx="346" cy="256" r="3" fill="#00F2FE" stroke="none" />
+
+    <!-- Top Left Connection -->
+    <path d="M 200,140 L 160,140 L 140,160" />
+    <circle cx="140" cy="160" r="3" fill="#00F2FE" stroke="none" />
+  </g>
+
+  <!-- Elegant star/data sparks accent -->
+  <g fill="#ffffff" opacity="0.6">
+    <polygon points="380,120 383,125 388,126 383,127 380,132 377,127 372,126 377,125" />
+    <polygon points="150,360 152,363 157,364 152,365 150,370 148,365 143,364 148,363" />
+    <polygon points="400,340 401,344 405,345 401,346 400,350 399,346 395,345 399,344" opacity="0.4" />
+  </g>
+</svg>

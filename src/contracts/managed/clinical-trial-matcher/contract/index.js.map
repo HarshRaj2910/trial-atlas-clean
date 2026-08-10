@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../../",
+  "sources": ["src/contracts/clinical_trial.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAAA;;;;;;;;;;MAYA,AAAA,iBAUC;;;;;cAVgC,WAAmB;cAAE,SAAgB;cAAE,oBAA2B;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;yCAAlE,WAAmB,+BAAE,SAAgB,+BAAE,oBAA2B;;;;;;;;;mDAAlE,WAAmB;mDAAE,SAAgB;mDAAE,oBAA2B;;;OAUlG;;;;;;;;GACA;EAvBD;;;;;;;;;;;;;;;;;;;;;;;;;;IAMA;;;;;;;;;yEAA8C;;;;;;;GAiB7C;EAXD,AAAA,oBAUC;;uBAVgC,WAAmB;uBAAE,SAAgB;uBAAE,oBAA2B;;4BAExF,WAAS;;4BACT,SAAO;;4BACP,oBAAkB;;UAGzB,KAAsB;IAAtB;;;;;;;;;;6FAAA,KAAsB;;;;wEAAA;;GAGzB;;;;;;;;;;;;;;;;IAhBD;qCAAA;;;;;;;;;;;0GAA8C;KAAA;;;;;;;;;;"
+}

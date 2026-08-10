@@ -1,0 +1,23 @@
+pragma language_version 0.22.0;
+
+import CompactStandardLibrary;
+
+// The Clinical Trial Matcher ZK Circuit proves eligibility without revealing raw medical data.
+
+export ledger trial_enrollment_count: Counter;
+
+// Trial 884 Requirements:
+// 1. Patient must have Type 2 Diabetes (A1C >= 7.0)
+// 2. Patient must NOT have a history of cardiovascular disease (CVD)
+// 3. Patient must NOT have kidney disease
+export circuit check_eligibility(a1c_level: Uint<32>, has_cvd: Boolean, has_kidney_disease: Boolean): Boolean {
+    // We scale A1C by 10 (e.g., 7.0 becomes 70) to use unsigned integers in Compact
+    assert(a1c_level >= 70, "Patient does not meet A1C threshold");
+    assert(has_cvd == false, "Patient is disqualified due to CVD history");
+    assert(has_kidney_disease == false, "Patient is disqualified due to kidney disease");
+    
+    // If all assertions pass, we increment the anonymous enrollment counter on the ledger
+    trial_enrollment_count.increment(1);
+    
+    return true;
+}

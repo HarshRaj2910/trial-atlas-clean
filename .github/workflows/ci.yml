@@ -1,0 +1,49 @@
+name: Trial Atlas CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  compact:
+    name: Compile Compact contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install Compact CLI
+        run: curl --proto '=https' --tlsv1.2 -LsSf https://github.com/midnightntwrk/compact/releases/download/compact-v0.5.1/compact-installer.sh | sh
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: compact update 0.30
+      - run: npm ci
+      - run: npm run compile:midnight
+      - run: npm run sync:midnight-assets
+
+  verify:
+    name: Test and build application
+    runs-on: ubuntu-latest
+    needs: compact
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build
+
+  live:
+    name: Verify production demo
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - run: curl --fail --silent --show-error --location https://trial-atlas-eight.vercel.app
