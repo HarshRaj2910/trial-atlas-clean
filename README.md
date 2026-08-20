@@ -6,6 +6,8 @@ Trial Atlas is a privacy-preserving eligibility workspace for Trial 884. A patie
 **Network:** Midnight Preprod
 **Contract address:** `95eaf001046638c2d4e75bf3c41c36a420c1a7f171e4cf7ccde3bd992a6c3307`
 **Explorer:** https://explorer.preprod.midnight.network
+**X profile:** `[PLACEHOLDER: add official Trial Atlas X profile URL]`
+**Demo video:** `[PLACEHOLDER: add one-minute demo video URL]`
 
 ## Product idea
 
