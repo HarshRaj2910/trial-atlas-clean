@@ -21,9 +21,9 @@ jobs:
       - name: Install Compact CLI
         run: curl --proto '=https' --tlsv1.2 -LsSf https://github.com/midnightntwrk/compact/releases/download/compact-v0.5.1/compact-installer.sh | sh
       - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-      - run: compact update 0.30 || true
+      - run: compact update 0.30
       - run: npm ci || npm install
-      - run: npm run compile-contracts || true
+      - run: npm run compile:midnight
 
   node-verification:
     name: 2 · Test Node integration
@@ -36,8 +36,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci || npm install
-      - run: npm test || true
-      - run: npm run build || true
+      - run: npm test
+      - run: npm run build
 
   ui-verification:
     name: 3 · Verify UI & Build
@@ -51,5 +51,5 @@ jobs:
       - run: |
           if [ -d "ui" ]; then
             npm --prefix ui ci || npm --prefix ui install
-            npm --prefix ui run build || true
+            npm --prefix ui run build
           fi

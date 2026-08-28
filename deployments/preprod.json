@@ -1,5 +1,5 @@
 {
-  "network": "Preprod",
-  "address": "0x02a149b819f078e352cb246d8142345e69e8",
+  "network": "preprod",
+  "contractAddress": "95eaf001046638c2d4e75bf3c41c36a420c1a7f171e4cf7ccde3bd992a6c3307",
   "timestamp": "2026-07-25"
 }

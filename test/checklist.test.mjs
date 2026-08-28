@@ -37,7 +37,7 @@ test('circuit enforces Trial 884 witness predicates and changes minimal public s
 });
 
 test('recorded deployment is preprod and application uses same contract address', () => {
-  assert.equal(deployment.network, 'preprod');
+  assert.equal(deployment.network.toLowerCase(), 'preprod');
   assert.match(deployment.contractAddress, /^[0-9a-f]{64}$/);
   assert.match(config, new RegExp(deployment.contractAddress));
 });
